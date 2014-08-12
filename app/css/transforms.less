@@ -1,0 +1,23 @@
+.up {
+  transform: scale(0.5, 0.5);
+  top: -20em;
+}
+
+.openUp {
+  -webkit-animation: openRotate 1s linear 1;
+  animation: openRotate 1s linear 1;
+}
+.progressive {
+  display: none;
+}
+.expander, a {
+  transition: 1s;
+  &:hover {
+    color: green;
+    //text-shadow: 0px 0px 19px rgba(150, 46, 62, 1);
+  }
+}
+.moveUp {
+  -webkit-animation: moveAndShrink 1s linear 1 both;
+  animation: moveAndShrink 1s linear 1 both;
+}

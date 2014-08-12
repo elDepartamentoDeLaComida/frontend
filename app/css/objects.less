@@ -1,0 +1,124 @@
+.menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  h1 {
+    text-align: left;
+    margin-bottom: 0em;
+    margin-top: 0em;
+    display: inline-block;
+    font-size: 1.75em;
+    &:last-child{
+      display: block;
+      margin-bottom: 0em;
+    }
+  }
+}
+.sobreNos {
+  p {
+    text-align: left;
+    margin: 0px auto;
+    display: inline-block;
+    width: 75%;
+  }
+}
+
+#view {
+  position: relative;
+  //margin-top: -15em;
+  top: -3em;
+}
+.socialMedia {
+  margin-right: 1em;
+  float: right;
+  img {
+    display: block;
+    max-width: 60%;
+  }
+}
+
+.metaInfo {
+  float: left;
+  margin-left: 1em;
+  p {
+    margin-left: 0.5em;
+    text-align: left;
+    margin-bottom: 0em;
+    margin-top: 0em;
+  }
+}
+
+
+.selector {
+  top: 10em;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  /*Constant rotation
+  -webkit-animation: rotate 1s linear infinite;
+  animation: rotate 1s linear infinite;
+  */
+  /* Hover rotation
+  transition: all 1s ease-in;
+  -webkit-transition: all 1s ease-in;
+  -ms-transition: all 1s ease-in;
+  &:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }*/
+}
+
+//logo circle
+.circle {
+  width: 20%;
+  display: block;
+  margin: 0px auto;
+  //Constant rotation
+  -webkit-animation: rotate 1s linear infinite;
+  animation: rotate 1s linear infinite;
+  /* Hover rotation
+  transition: all 1s ease-in;
+  -webkit-transition: all 1s ease-in;
+  -ms-transition: all 1s ease-in;
+  &:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }*/
+}
+
+
+@media (min-width: 22em) {
+  .sobreNos {
+  p {
+      margin: 0px auto;
+      display: inline-block;
+      width: 25%;
+    }
+  }
+  #view {
+    iframe {
+      //margin-top: -4em;
+      height: 22em;
+    }
+  }
+  .selector {
+    top: 12em;
+  }
+  .up {
+    top: -2em;
+  }
+  .progressive {
+    display: initial;
+  }
+  .menu h1 {
+    text-align: right;
+  }
+  nav {
+    font-size: 1em;
+  }
+  .circle {
+    width: 9%;
+  }
+}
