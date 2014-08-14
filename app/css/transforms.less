@@ -3,21 +3,27 @@
   top: -20em;
 }
 
-.openUp {
-  -webkit-animation: openRotate 1s linear 1;
-  animation: openRotate 1s linear 1;
+.expandRotate {
+  -webkit-animation: expandRotate 1s linear 1;
+  animation: expandRotate 1s linear 1;
 }
+
 .progressive {
   display: none;
 }
+
 .expander, a {
   transition: 1s;
   &:hover {
     color: green;
-    //text-shadow: 0px 0px 19px rgba(150, 46, 62, 1);
   }
 }
-.moveUp {
-  -webkit-animation: moveAndShrink 1s linear 1 both;
-  animation: moveAndShrink 1s linear 1 both;
+.shiftUpAndShrink {
+  -webkit-animation: shiftUpAndShrink 1s linear 1 both;
+  animation: shiftUpAndShrink 1s linear 1 both;
+}
+
+.expandBox {
+    transform: scale(2, 2);
+    -webkit-transform: scale(2, 2);
 }

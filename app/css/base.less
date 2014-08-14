@@ -1,34 +1,10 @@
-h1,h2,h3,h4,h5, p, a {
-  text-align: center;
-   max-width: 100%;
-}
-h4 {
-  display: inline-block;
-}
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.icon {
-  transition: 1s;
-  font-size: 0.75em;
-}
-
-.expandAnim {
-  -webkit-animation: expander 1s linear 1;
-}
-iframe {
-  max-width: 100%;
-  width: 75%;
-  height: 18em;
-}
 html, body {
   height: 100%;
 }
+
 body {
-  width: 100%;
   background-color: black;
+  width: 100%;
   font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
   margin: 0px auto;
   text-align: center;
@@ -37,16 +13,49 @@ body {
     max-width: 100%;
   }
 }
+
+header {
+  max-width: 100%;
+  background-color: black;
+  height: 19%;
+}
+
 nav {
   font-size: 0.9em;
 }
-header {
-  max-width: 100%;
+
+h1,h2,h3,h4,h5, p, a {
+  text-align: center;
+   max-width: 100%;
 }
+h4 {
+  display: inline-block;
+}
+section {
+  padding-top: 2%;
+  padding-bottom: 1%;
+  h2 {
+    margin-top: 0px;
+  }
+}
+article + article {
+    margin-top: 2%;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+iframe {
+  max-width: 100%;
+  width: 75%;
+  height: 18em;
+}
+
 footer {
   width: 100%;
   position: absolute;
   bottom: 0;
   display: block;
+  background-color: black;
 }
-

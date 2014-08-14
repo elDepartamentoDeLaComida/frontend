@@ -9,16 +9,7 @@
   }
 }
 
-@keyframes openRotate {
-  from {
-    transform: scale(0,0) rotate(0deg);
-  }
-  to {
-    transform: scale(1,1) rotate(360deg);
-  }
-}
-
-@-webkit-keyframes openRotate {
+@-webkit-keyframes expandRotate {
   from {
     -webkit-transform: scale(0,0) rotate(0deg);
   }
@@ -26,7 +17,7 @@
     -webkit-transform: scale(1,1) rotate(360deg);
   }
 }
-@keyframes openRotate {
+@keyframes expandRotate {
   from {
     transform: scale(0,0) rotate(0deg);
   }
@@ -35,7 +26,7 @@
   }
 }
 
-@keyframes moveAndShrink {
+@keyframes shiftUpAndShrink {
   from {
     transform: scale(1, 1) translate(0em, 0em);
   }
@@ -44,7 +35,7 @@
   }
 }
 
-@-webkit-keyframes moveAndShrink {
+@-webkit-keyframes shiftUpAndShrink {
   0% {
     //-webkit-transform: scale(1, 1) translate(0em, 0em);
     -webkit-transform: scale(1, 1) translate(0%, 0%);
@@ -54,38 +45,21 @@
   }
 }
 
-@-webkit-keyframes expander {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(90deg);
-  }
-}
-@keyframes expander {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(90deg);
-  }
-}
-
 @media (min-width: 22em) {
-  @keyframes moveAndShrink {
+  @keyframes shiftUpAndShrink {
     from {
       transform: scale(1, 1) translate(0em, 0em);
     }
     to {
-      transform: scale(0.5, 0.5) translate(0%, -340%);
+      transform: scale(0.5, 0.5) translate(0%, -25em);
     }
   }
-  @-webkit-keyframes moveAndShrink {
+  @-webkit-keyframes shiftUpAndShrink {
     0% {
       -webkit-transform: scale(1, 1) translate(0em, 0em);
     }
     100% {
-      -webkit-transform: scale(0.5, 0.5) translate(0%, -340%);
+      -webkit-transform: scale(0.5, 0.5) translate(0%, -25em);
     }
   }
 }
