@@ -1,6 +1,6 @@
 var $ = require("jquery");
 module.exports = {
-    fade: function (el) {
+    fadeIn: function (el) {
         var $el = $(el);
         if ($el.css('display') !== "none") {
             $el.css("display", "none");
@@ -42,5 +42,53 @@ module.exports = {
                 "-ms-transform": 'rotate(' + degrees + 'deg)'
             });
         };
+    },
+
+    stopExpandStartRotate: function (el) {
+        var rotateMe = this.mouseRotate(el);
+        console.log(this.mouseRotate);
+        el.removeClass("expandRotate");
+        setTimeout(function () {
+            $(document).on("mousemove", rotateMe);
+        }, 100);
+    },
+
+    expandExpanders: function () {
+        var icon = $(this).children(".icon"),
+            expandee = $(this).siblings(".expandee");
+        if (icon) {
+            if ($(expandee).css("display") === "none") {
+                $(icon).html("&#9660;");
+            } else {
+                $(icon).html("&#9654;");
+            }
+        }
+        $(expandee).toggle("slow");
+    },
+
+    pullView: function (e, viewEl, selectorEl) {
+        e.preventDefault();
+
+        var $link = $(e.target),
+            ref = "./views" + $link.attr("href");
+        console.log(ref);
+        $.ajax({
+            url: ref,
+            method: "GET",
+            success: function (data) {
+                history.pushState(null, null, $link.attr("href"));
+                if (selectorEl) {
+                    selectorEl.addClass("shiftUpAndShrink");
+                }
+                $("footer").css("position", "initial");
+                viewEl.hide(10);
+                viewEl.html(data);
+                viewEl.show("slow");
+                console.log($link.attr("href"));
+            },
+            error: function () {
+                window.location.href = "http://eldepartamentodelacomida.com/dev" + $link.attr("href");
+            }
+        });
     }
 };

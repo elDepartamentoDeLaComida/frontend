@@ -32,29 +32,6 @@
   }*/
 }
 
-//logo circle
-.circle {
-  width: 20%;
-  display: block;
-  margin: 0px auto;
-  //Constant rotation
-  -webkit-animation: rotate 1s linear infinite;
-  animation: rotate 1s linear infinite;
-  /* Hover rotation
-  transition: all 1s ease-in;
-  -webkit-transition: all 1s ease-in;
-  -ms-transition: all 1s ease-in;
-  &:hover {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-  }*/
-}
-.content {
-    img {
-        width: 50%;
-    }
-}
 
 .menu {
   position: absolute;
@@ -62,8 +39,7 @@
   top: 0;
   h1 {
     text-align: left;
-    margin-bottom: 0em;
-    margin-top: 0em;
+    margin-top: -0.2em;
     display: inline-block;
     font-size: 1.75em;
     &:last-child{
@@ -73,12 +49,14 @@
   }
 }
 
+
+//VIEW CSS
+
+
 //FOOTER CSS
 .socialMedia {
-  margin-right: 1em;
-  float: right;
   img {
-    display: block;
+    display: inline-block;
     max-width: 60%;
     opacity: 0.7;
     transition: opacity 0.3s;
@@ -87,29 +65,18 @@
     }
   }
 }
-
+.circle {
+    width: 20%;
+}
 .metaInfo {
-  float: left;
-  margin-left: 1em;
+    .location {
+        font-weight: 300;
+    }
   p {
+    display: inline-block;
     margin-left: 0.5em;
     text-align: left;
     margin-bottom: 0em;
     margin-top: 0em;
   }
-}
-
-//VIEW CSS
-.sobreNos {
-  p {
-    text-align: left;
-    margin: 0px auto;
-    display: inline-block;
-    width: 75%;
-  }
-}
-
-.icon {
-  transition: 1s;
-  font-size: 0.75em;
 }
