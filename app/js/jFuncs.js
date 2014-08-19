@@ -1,7 +1,11 @@
+"use strict";
 var $ = require("jquery");
 module.exports = {
     fadeIn: function (el) {
-        var $el = $(el);
+        var $el = el;
+        if (!($el instanceof $)) {
+            $el = $(el);
+        }
         if ($el.css('display') !== "none") {
             $el.css("display", "none");
         }
@@ -90,5 +94,8 @@ module.exports = {
                 window.location.href = "http://eldepartamentodelacomida.com/dev" + $link.attr("href");
             }
         });
+    },
+    shiftUp: function () {
+        $(this).addClass("shiftUpAndShrink");
     }
 };
