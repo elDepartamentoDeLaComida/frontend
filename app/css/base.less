@@ -3,9 +3,9 @@ html, body {
 }
 
 body {
-  background-color: black;
+  background-color: @ui-color;
   width: 100%;
-  font-family: "Oswald", "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  font-family: @fonts;
   font-weight: 400;
   margin: 0px auto;
   text-align: center;
@@ -17,12 +17,11 @@ body {
 
 header {
   max-width: 100%;
-  background-color: black;
   height: 22%;
 }
 
 nav {
-    float: left;
+  float: left;
   font-size: 0.9em;
   font-weight: 300;
 }
@@ -51,11 +50,11 @@ section {
       width: 50%;
   }
   p {
-  text-align: left;
-  margin: 0px auto;
-  display: inline-block;
-  width: 75%;
-    }
+    text-align: left;
+    margin: 0px auto;
+    display: inline-block;
+    width: 75%;
+  }
 }
 article + article {
     margin-top: 2%;
@@ -76,5 +75,4 @@ footer {
   position: absolute;
   bottom: 0;
   display: block;
-  background-color: black;
 }
