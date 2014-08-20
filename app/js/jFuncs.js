@@ -28,19 +28,20 @@ module.exports = {
         return quadrent;
     },
     mouseRotate: function (el) {
-        if (!(el.hasOwnProperty("offset"))) {
-            el = $(el);
+        var $el = el;
+        if (!($el instanceof $)) {
+            $el = $($el);
         }
-        var offset = el.offset();
+        var offset = $el.offset();
         return function (e) {
-            var center_x = (offset.left) + (el.width() / 2),
-                center_y = (offset.top) + (el.height() / 2),
+            var center_x = (offset.left) + ($el.width() / 2),
+                center_y = (offset.top) + ($el.height() / 2),
                 mouse_x = e.pageX,
                 mouse_y = e.pageY,
                 radians = Math.atan2(mouse_x - center_x, mouse_y - center_y),
                 degrees = (radians * (180 / Math.PI) * -1) + 25;
-            //66 so it stays on target with mouse
-            el.css({
+            //25 so it stays on target with mouse
+            $el.css({
                 "transform": 'rotate(' + degrees + 'deg)',
                 "-webkit-transform": 'rotate(' + degrees + 'deg)',
                 "-ms-transform": 'rotate(' + degrees + 'deg)'
@@ -50,14 +51,17 @@ module.exports = {
 
     stopExpandStartRotate: function (el) {
         var rotateMe = this.mouseRotate(el);
-        console.log(this.mouseRotate);
         el.removeClass("expandRotate");
         setTimeout(function () {
-            $(document).on("mousemove", rotateMe);
+            $("body").on("mousemove", rotateMe);
         }, 100);
+    },
+    stopRotate: function () {
+        $("body").off("mousemove");
     },
 
     expandExpanders: function () {
+        console.log(this);
         var icon = $(this).children(".icon"),
             expandee = $(this).siblings(".expandee");
         if (icon) {
@@ -70,32 +74,11 @@ module.exports = {
         $(expandee).toggle("slow");
     },
 
-    pullView: function (e, viewEl, selectorEl) {
-        e.preventDefault();
-
-        var $link = $(e.target),
-            ref = "./views" + $link.attr("href");
-        console.log(ref);
-        $.ajax({
-            url: ref,
-            method: "GET",
-            success: function (data) {
-                history.pushState(null, null, $link.attr("href"));
-                if (selectorEl) {
-                    selectorEl.addClass("shiftUpAndShrink");
-                }
-                $("footer").css("position", "initial");
-                viewEl.hide(10);
-                viewEl.html(data);
-                viewEl.show("slow");
-                console.log($link.attr("href"));
-            },
-            error: function () {
-                window.location.href = "http://eldepartamentodelacomida.com/dev" + $link.attr("href");
-            }
-        });
-    },
-    shiftUp: function () {
-        $(this).addClass("shiftUpAndShrink");
+    shiftUp: function (el) {
+        var $el = el;
+        if (!($el instanceof $)) {
+            $el = $(el);
+        }
+        $el.addClass("shiftUpAndShrink");
     }
 };

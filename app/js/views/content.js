@@ -2,26 +2,29 @@
 
 var jFuncs = require("../jFuncs"),
     $ = require("jquery"),
-    Backbone = require("backbone");
+    Backbone = require("backbone"),
+    path = require("path");
 Backbone.$ = $;
 
 module.exports = Backbone.View.extend({
     tagName: "section",
-    templatePrefix: "views/",
     events: {
         "click .expander": "expand"
     },
-
-    initialize: function (page) {
-        console.log(this.templateprefix + page);
-        this.template = require(this.templateprefix + page);
-        this.page = page;
-        this.listenTo(this.model, "change", this.render);
+    pages: {},
+    initialize: function (options) {
+        this.$el = options.$el;
+        this.template = options.template;
+        this.page = options.page;
+        this.render();
     },
     render: function () {
+        this.$el.hide();
         this.$el.html(this.template);
-
+        this.$el.show("slow");
         return this;
     },
-    expand: jFuncs.expandExpanders
+    expand: function (e) {
+        jFuncs.expandExpanders.call(e.target);
+    }
 });

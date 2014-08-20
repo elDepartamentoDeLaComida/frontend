@@ -9,6 +9,7 @@
     "Alberto de la Cruz <alberto@nighnight.com>"
   ],
   "devDependencies": {
+    "brfs": "^1.2.0",
     "browser-sync": "^1.3.3",
     "browserify": "^5.9.1",
     "gulp": "^3.8.7",
@@ -27,6 +28,7 @@
     "gulp-util": "^3.0.0",
     "pretty-hrtime": "^0.2.1",
     "require-dir": "^0.1.0",
+    "stringify": "^2.2.0",
     "uglifyify": "^2.5.0",
     "vinyl-source-stream": "^0.1.1",
     "watchify": "^1.0.1"
