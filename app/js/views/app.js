@@ -32,7 +32,8 @@ module.exports = Backbone.View.extend({
         this.ui.$circle.one("webkitAnimationEnd oanimationend mozAnimationEnd animationend",
             this.startRotating);
         this.router = new Router();
-        this.router.on("link", this.renderContent);
+        //this.router.on("link", this.renderContent);
+        Backbone.history.start({pushState: true});
     },
 
     shiftUp: function (el) {
@@ -65,6 +66,7 @@ module.exports = Backbone.View.extend({
     },
 
     renderContent: function (event) {
+        console.log(event);
         event.preventDefault();
         this.shiftUp(this.ui.$circle);
         var page = $(event.target).attr("data-view-cid");
